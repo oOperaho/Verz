@@ -1,2 +1,2 @@
 # Verz
-A CLI app to get information from subreddits
+A CLI app to get information from subreddits.
