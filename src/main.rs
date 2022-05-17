@@ -12,7 +12,7 @@ async fn main() {
             println!("{}", h);
         }
 
-        let title = &s[1];
+        let title = &s[2];
         let sub = Subreddit::new(title);
 
         if &s[1] == "hot" {
