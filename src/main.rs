@@ -14,8 +14,9 @@ async fn main() {
 
         let title = &s[1];
         let sub = Subreddit::new(title);
+
         if &s[1] == "hot" {
-            let hot_posts = hot();
+            let hot_posts = sub.hot(30, None).await;
         }
     } else {
         println!("Error! Invalid number of arguments! Enter cargo run help to see the available commands!");
@@ -28,8 +29,4 @@ fn help() -> String {
         help: You're seeing it right now!
         hot: Shows the hot posts of the subreddit within 30 limit range
         new: Displays the new posts of the subreddit within 15 limit range")
-}
-
-fn hot(&str) -> Result<String, Error> {
-    // snip
 }
