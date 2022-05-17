@@ -17,6 +17,7 @@ async fn main() {
 
         if &s[1] == "hot" {
             let hot_posts = sub.hot(30, None).await;
+            println!("{:?}", hot_posts);
         }
     } else {
         println!("Error! Invalid number of arguments! Enter cargo run help to see the available commands!");
