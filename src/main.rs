@@ -13,7 +13,6 @@ async fn main() {
         }
 
         let title = &s[1];
-
         let sub = Subreddit::new(title);
 
         let hot_posts = sub.hot(30, None).await;
