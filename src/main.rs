@@ -29,3 +29,7 @@ fn help() -> String {
         hot: Shows the hot posts of the subreddit within 30 limit range
         new: Displays the new posts of the subreddit within 15 limit range")
 }
+
+fn hot(&str) -> Result<String, Error> {
+    // snip
+}
