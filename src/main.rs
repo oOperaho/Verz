@@ -6,7 +6,7 @@ use tokio;
 async fn main() {
     let s: Vec<String> = env::args().collect();
 
-    if s.len() == 2 {
+    if s.len() == 3 {
         if &s[1] == "help" {
             let h = help();
             println!("{}", h);
@@ -14,10 +14,9 @@ async fn main() {
 
         let title = &s[1];
         let sub = Subreddit::new(title);
-
-        let hot_posts = sub.hot(30, None).await;
-
-        println!("{:?}", hot_posts);
+        if &s[1] == "hot" {
+            let hot_posts = hot();
+        }
     } else {
         println!("Error! Invalid number of arguments! Enter cargo run help to see the available commands!");
     }
