@@ -18,9 +18,12 @@ async fn main() {
         if &s[1] == "hot" {
             let hot_posts = sub.hot(30, None).await;
             println!("{:?}", hot_posts);
+        } else if &s[1] == "top" {
+            let top_posts = sub.top(15, None).await;
+            println!("{:?}", top_posts);
         }
     } else {
-        println!("Error! Invalid number of arguments! Enter cargo run help to see the available commands!");
+        println!("Error! Invalid arguments! Enter cargo run help to see the available commands!");
     }
 }
 
@@ -29,5 +32,5 @@ fn help() -> String {
         Enter 'cargo run [name-of-subreddit] [sort-by-x]' to use Verz!
         help: You're seeing it right now!
         hot: Shows the hot posts of the subreddit within 30 limit range
-        new: Displays the new posts of the subreddit within 15 limit range")
+        top: Displays the top posts of the subreddit within 15 limit range")
 }
